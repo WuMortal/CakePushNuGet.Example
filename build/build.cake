@@ -70,7 +70,7 @@ Task ("PushPack")
   .IsDependentOn ("Restore")
   .IsDependentOn ("Build")
   .IsDependentOn ("Pack")
-  // .IsDependentOn ("Push")
+  .IsDependentOn ("Push")
   .Does (() => {
     Information ("所有任务完成");
   });
