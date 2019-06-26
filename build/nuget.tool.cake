@@ -53,7 +53,7 @@ public class NuGetTool {
 
         foreach (var packageFilePath in packageFilePaths) {
             CakeContext.NuGetAddSource (
-                "wigor.dmhy",
+                "wigor",
                 this.RepositoryApiUrl,
                 new NuGetSourcesSettings {
                     UserName = this.UserName,
@@ -61,7 +61,7 @@ public class NuGetTool {
                 });
 
             CakeContext.NuGetPush (packageFilePath, new NuGetPushSettings {
-                Source = "wigor.dmhy",
+                Source = "wigor",
                 ApiKey = this.RepositoryApiKey
             });
 
