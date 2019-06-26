@@ -23,8 +23,11 @@
 使用到的工具及版本：
 
 > dotnet core 2.2
+>
 > cake 0.33.0
+>
 > PowerShell、NuGet、CredentialProvider
+>
 > AzureDevops Pipelines 和 AzureDevops Artifacts
 
 # 介绍
