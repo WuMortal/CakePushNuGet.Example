@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wigor.CakePushNuGet.HelloWorld", "Wigor.CakePushNuGet.HelloWorld\Wigor.CakePushNuGet.HelloWorld.csproj", "{301A35AC-E2D7-440F-B845-300F6FCE191B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{301A35AC-E2D7-440F-B845-300F6FCE191B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301A35AC-E2D7-440F-B845-300F6FCE191B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301A35AC-E2D7-440F-B845-300F6FCE191B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301A35AC-E2D7-440F-B845-300F6FCE191B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B79963D9-ED43-4658-9438-582EC92EE33F}
+	EndGlobalSection
+EndGlobal
