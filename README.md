@@ -109,7 +109,7 @@ dotnet cake build/build.cake -verbosity=diagnostic
 
 ![cake 运行](./doc/images/4.jpg)
 
-可以看到这里的 cake 已经运行成功了，它会将我们每个任务允许的结果和信息显示在控制台上。
+可以看到这里的 cake 已经运行成功了，它会将我们每个任务运行的结果和信息显示在控制台上。
 
 ![cake 运行](./doc/images/5.jpg)
 
@@ -124,12 +124,12 @@ dotnet cake build/build.cake -verbosity=diagnostic
 
 ![AzureDevops Pipelines 使用](./doc/images/7.jpg)
 
-这里如果你的账号是 GitHub 授权登录的话会先跳转到授权界面可能会跳转多次，同意即可。
+这里你的账号是 GitHub 授权登录的话会先跳转到授权界面可能会跳转多次，同意即可。
 
 ![AzureDevops Pipelines 使用](./doc/images/8.jpg)
 ![AzureDevops Pipelines 使用](./doc/images/9.jpg)
 
-删除我选中的代码，因为本次我不打算用 AzureDevops Pipelines 的脚本来执行本次操作，它做的只是提供我们 cake 运行的环境。
+删除我选中的代码，因为我不打算用 AzureDevops Pipelines 的脚本来执行本次操作，它做的只是提供我们 cake 运行的环境。
 
 ![AzureDevops Pipelines 使用](./doc/images/10.jpg)
 
@@ -149,7 +149,7 @@ steps:
   displayName: 'Push NuGet Package'
 ```
 
-可以看到问们管道的运行出现了错误，那是因为我们上面在运行了 cake.ps1 这个脚本，但是我们现在还有创建这个脚本。
+可以看到问们管道的运行出现了错误，那是因为我们上面在运行了 cake.ps1 这个脚本，但是我们现在还没有创建这个脚本。
 
 ![AzureDevops Pipelines 使用](./doc/images/12.jpg)
 
@@ -157,7 +157,7 @@ steps:
 
 ![AzureDevops Pipelines 使用](./doc/images/13.jpg)
 
-接着我们编写我们下面缺少的 cake.ps1 文件，它做的事情就是将我们之前手动在 cmd 中运行的命令放入了一个 PowerShell 脚本文件中，你是 Linux 平台的话就编写一个 shell 脚本。
+接着我们编写我们下面缺少的 cake.ps1 文件，它做的事情就是将我们之前手动在 cmd 中运行的命令放入了一个 PowerShell 脚本文件中，Linux 平台的话就编写一个 shell 脚本。
 
 ![AzureDevops Pipelines 使用](./doc/images/13_1.jpg)
 
@@ -180,7 +180,7 @@ dotnet cake build\build.cake -verbosity=diagnostic
 
 ![AzureDevops Pipelines 使用](./doc/images/16.jpg)
 
-然后在次运行 `powershell .\cake.ps1` 或者命令，可以看到正确的输出了
+然后再次运行 `powershell .\cake.ps1` 或者命令，可以看到正确的输出了
 
 ![AzureDevops Pipelines 使用](./doc/images/18.jpg)
 
@@ -322,13 +322,13 @@ public class NuGetTool {
 
 > 这里参考了最开始提到的园友的项目，非常感谢它的贡献，GitHub 地址如下：[cake.example](https://github.com/linianhui/cake.example)
 
-在创建 `AzureDevops Artifacts` 的时候不是那提供了 `NuGet + Credentials Provider` 的下载地址嘛，现在把它解压到我们项目的 `build\tool\` 下。再次说明这里我是 Windows 环境，如果你的运行环境是 Linux 或其他可以在 `microsoft/artifacts-credprovider` 的 GitHub 上获取对应平台的这两个包， [点击查看 GitHub 地址](https://github.com/Microsoft/artifacts-credprovider)
+在创建 `AzureDevops Artifacts` 的时候那不是提供了 `NuGet + Credentials Provider` 的下载地址嘛，现在把它解压到我们项目的 `build\tool\` 下。再次说明这里我是 Windows 环境，如果你的运行环境是 Linux 或其他可以在 `microsoft/artifacts-credprovider` 的 GitHub 上获取对应平台的这两个包， [点击查看 GitHub 地址](https://github.com/Microsoft/artifacts-credprovider)。
 
 ![NuGet.exe、Credentials Provider](./doc/images/31.jpg)
 
 # 修改 cake.ps1 和 build.cake 文件
 
-修改 cake.ps1，只是增加了 NuGet.exe 的环境变量，应为不加到时候 cake 会找不到 NuGet.exe，或许还有其他办法这里就先这么干，如果各位还有更方便的方法可以在下面留言，感谢！
+修改 cake.ps1，只是增加了 NuGet.exe 的环境变量，因为不加到时候 cake 会找不到 NuGet.exe，或许还有其他办法这里就先这么干，如果各位还有更方便的方法可以在下面留言，感谢！
 
 ``` powershell
 # 执行的文件
@@ -437,7 +437,7 @@ RunTarget (target);
 
 ![结果](./doc/images/32.png)
 
-至此已经实现了 使用 Cake 推送 NuGet 包到 AzureDevops 的 Artifacts 上，你如果不熟悉 `AzureDevops Pipelines` 你也可以用其他的 CI/CD 来执行。
+至此已经实现了 使用 Cake 推送 NuGet 包到 AzureDevops 的 Artifacts 上，你如果不熟悉 `AzureDevops Pipelines` 你也可以用其他的 CI/CD 工具来执行。
 
 # 补充
 
